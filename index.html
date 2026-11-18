@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>台灣酒駕新聞地圖（雛形）</title>
 <style>
-:root{--bg:#F4F6F8;--card:#fff;--ink:#1F2A37;--mute:#64748B;--line:#E2E8F0;--acc:#C2410C;--accbg:#FFF1E8;--chip:#EEF2F6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151C;--card:#18202A;--ink:#E6EBF1;--mute:#93A1B3;--line:#2A3644;--acc:#FB923C;--accbg:#2A1D14;--chip:#222D3A}}
+:root{--bg:#F4EDE2;--card:#FFFBF4;--ink:#3A3029;--mute:#7B6E61;--line:#E5D9C7;--acc:#B4501A;--accbg:#FBEBDC;--chip:#EFE5D5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B1612;--card:#251F19;--ink:#EDE3D6;--mute:#A99C8C;--line:#3A3027;--acc:#F59E5B;--accbg:#2E2016;--chip:#30281F}}
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 header{padding:18px 20px 6px;max-width:1280px;margin:0 auto}
-h1{font-size:22px;margin:0 0 4px}
+h1{font-size:22px;margin:0 0 4px;display:flex;align-items:center;gap:10px}h1 svg{flex:none}.foot{max-width:1280px;margin:0 auto;padding:0 20px 40px;color:var(--mute);font-size:13px;text-align:center}
 header p{margin:0;color:var(--mute);font-size:14px}
 .demo{margin:10px auto 0;max-width:1240px;padding:8px 14px;border-radius:10px;background:var(--accbg);color:var(--acc);font-size:13px;border:1px solid var(--acc)}
 main{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:20px;max-width:1280px;margin:0 auto;padding:16px 20px 60px}
@@ -56,14 +56,14 @@ input,select,textarea{width:100%;font:inherit;padding:9px 10px;border-radius:10p
 </head>
 <body>
 <header>
-<h1>台灣酒駕新聞地圖</h1>
+<h1><svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true"><defs><radialGradient id="fl" cx="50%" cy="65%" r="60%"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".55" stop-color="#FDBA4D"/><stop offset="1" stop-color="#F0771C"/></radialGradient></defs><ellipse cx="15" cy="9" rx="11" ry="9" fill="#FDBA4D" opacity=".22"/><path d="M15 2C19 8 21 11 19.5 14.5C18.6 16.6 16.8 17.4 15 17.4C13.2 17.4 11.4 16.6 10.5 14.5C9 11 11 8 15 2Z" fill="url(#fl)"/><rect x="14.4" y="17" width="1.2" height="3" rx=".6" fill="#6B5846"/><rect x="8" y="20" width="14" height="14" rx="2" fill="#F7EBD6" stroke="#C7A27A" stroke-width="1.2"/><ellipse cx="15" cy="20" rx="7" ry="1.6" fill="#EBD9BC"/><rect x="4" y="34" width="22" height="3" rx="1.5" fill="#C7A27A"/></svg>台灣酒駕新聞地圖</h1>
 <p>讓每一件酒駕傷亡的故事都被記得。點選縣市，閱讀整理過的新聞故事與原始報導連結。</p>
 </header>
 <div class="demo" id="demo">目前所有事件、故事與新聞連結都是示意用的假資料，連結不會開啟真實新聞。</div>
 <main>
 <div class="mapwrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1152 2048" font-family="'Noto Sans TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif" font-weight="700">
 <defs>
-<radialGradient id="sea" cx="0.55" cy="0.45" r="0.8"><stop offset="0" stop-color="#F5F9FB"/><stop offset="1" stop-color="#D9E7EE"/></radialGradient>
+<radialGradient id="sea" cx="0.55" cy="0.45" r="0.8"><stop offset="0" stop-color="#FAF5EC"/><stop offset="1" stop-color="#E4E5DF"/></radialGradient>
 <filter id="shadow" x="-10%" y="-5%" width="120%" height="115%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1E3A5F" flood-opacity=".30"/></filter>
 <linearGradient id="g_newtaipei" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#365CAF"/><stop offset="1" stop-color="#27427D"/></linearGradient><linearGradient id="g_yilan" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#5079C1"/><stop offset="1" stop-color="#365A99"/></linearGradient><linearGradient id="g_taoyuan" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#399A74"/><stop offset="1" stop-color="#276A4F"/></linearGradient><linearGradient id="g_hsinchu" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#53B081"/><stop offset="1" stop-color="#3C8460"/></linearGradient><linearGradient id="g_miaoli" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#2B865F"/><stop offset="1" stop-color="#1B543C"/></linearGradient><linearGradient id="g_taichung" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#F19D53"/><stop offset="1" stop-color="#EC7A16"/></linearGradient><linearGradient id="g_nantou" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#F5B46E"/><stop offset="1" stop-color="#F19430"/></linearGradient><linearGradient id="g_changhua" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#E17A4F"/><stop offset="1" stop-color="#CB5422"/></linearGradient><linearGradient id="g_yunlin" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#D077AC"/><stop offset="1" stop-color="#BF458E"/></linearGradient><linearGradient id="g_chiayi" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#E59CC4"/><stop offset="1" stop-color="#D868A4"/></linearGradient><linearGradient id="g_tainan" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#C66DA1"/><stop offset="1" stop-color="#AD4381"/></linearGradient><linearGradient id="g_kaohsiung" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#972E3F"/><stop offset="1" stop-color="#651F2A"/></linearGradient><linearGradient id="g_pingtung" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#B34C61"/><stop offset="1" stop-color="#843847"/></linearGradient><linearGradient id="g_hualien" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#4493D2"/><stop offset="1" stop-color="#2972AB"/></linearGradient><linearGradient id="g_taitung" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#226FC5"/><stop offset="1" stop-color="#184F8D"/></linearGradient><linearGradient id="g_taipei" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#7593CA"/><stop offset="1" stop-color="#466EB6"/></linearGradient><linearGradient id="g_keelung" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#A4BADF"/><stop offset="1" stop-color="#7395CE"/></linearGradient><linearGradient id="g_hsinchu_c" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#94CBAB"/><stop offset="1" stop-color="#67B588"/></linearGradient><linearGradient id="g_chiayi_c" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#BA5591"/><stop offset="1" stop-color="#923B6F"/></linearGradient>
 </defs>
@@ -89,6 +89,7 @@ input,select,textarea{width:100%;font:inherit;padding:9px 10px;border-radius:10p
 </svg></div>
 <section class="panel" id="panel"></section>
 </main>
+<div class="foot">謹以此紀念每一位因酒駕而離開的人，也提醒我們：喝酒不開車。</div>
 <div id="tip"></div>
 <div id="toast"></div>
 
